@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width" />
     <title>Exercício 5.2</title>
     <style>
+      * {
+        color:aliceblue
+      }
+
       div {
         border-color: black;
         border-style: solid;
@@ -58,6 +62,7 @@
   <body>
     <script>
       let body = document.querySelector('body')
+
 // Adicione a tag h1 com o texto Exercício 5.2 - JavaScript DOM como filho da tag body ;
       function requisito1() {
         novatag = document.createElement('h1')
@@ -75,14 +80,78 @@
         body.appendChild(novadiv)
       }
       requisito2()
-// Adicione a tag div com a classe center-content como filho da tag div criada no passo 2;
-// Adicione a tag p como filho do div criado no passo 3 e coloque algum texto;
-// Adicione a tag div com a classe left-content como filho da tag div criada no passo 2;
-// Adicione a tag div com a classe right-content como filho da tag div criada no passo 2;
-// Adicione uma imagem com src configurado para o valor https://picsum.photos/200 e classe small-image . Esse elemento deve ser filho do div criado no passo 5;
-// Adicione uma lista não ordenada com os valores de 1 a 10 por extenso como valores da lista. Essa lista deve ser filha do div criado no passo 6;
-// Adicione 3 tags h3 , todas sendo filhas do div criado no passo 2.
 
+// Adicione a tag div com a classe center-content como filho da tag div criada no passo 2;
+      function requisito3() {
+        novadiv = document.createElement('div')
+        novadiv.className = 'center-content'
+
+        document.querySelector('.main-content').appendChild(novadiv)
+      }
+      requisito3()
+
+// Adicione a tag p como filho do div criado no passo 3 e coloque algum texto;
+      function requisito4() {
+        tagP = document.createElement('p')
+        tagP.innerText = 'Texto aleatório'
+
+        document.querySelector('.center-content').appendChild(tagP)
+      }
+      requisito4()
+
+// Adicione a tag div com a classe left-content como filho da tag div criada no passo 2;
+      function requisito5() {
+        novadiv = document.createElement('div')
+        novadiv.className = 'left-content'
+
+        document.querySelector('.main-content').appendChild(novadiv)
+      }
+      requisito5()
+
+// Adicione a tag div com a classe right-content como filho da tag div criada no passo 2;
+      function requisito6() {
+        novadiv = document.createElement('div')
+        novadiv.className = 'right-content'
+
+        document.querySelector('.main-content').appendChild(novadiv)
+      }
+      requisito6()
+// Adicione uma imagem com src configurado para o valor https://picsum.photos/200 e classe small-image . Esse elemento deve ser filho do div criado no passo 5;
+      function requisito7() {
+        novaimg = document.createElement('img')
+        novaimg.src = 'https://picsum.photos/200'
+        novaimg.className = 'small-image'
+
+        document.querySelector('.left-content').appendChild(novaimg)
+      }
+      requisito7()
+// Adicione uma lista não ordenada com os valores de 1 a 10 por extenso como valores da lista. Essa lista deve ser filha do div criado no passo 6;
+      function requisito8() {
+        let listaNum = ['um', 'dois', 'tres', 'quatro', 'cinco', 'seis', 'sete', 'oito', 'nove', 'dez']
+        novalista = document.createElement('ul')
+        
+        for (let item of listaNum) {
+          li = document.createElement('li')
+          li.innerText = item
+          
+          novalista.appendChild(li)
+        }
+
+          document.querySelector('.right-content').appendChild(novalista)
+        }
+      requisito8()
+      
+// Adicione 3 tags h3 , todas sendo filhas do div criado no passo 2.
+      function requisito9() {
+        for (let index = 1; index < 4; index ++) {
+          tagH = document.createElement('h3')
+          
+          document.querySelector('.main-content').appendChild(tagH)
+        }
+      }
+      requisito9()
+      
+      console.log(document.body)
     </script>
   </body>
 </html>
