@@ -45,6 +45,7 @@ button.innerText = string;
 document.querySelector('.buttons-container').appendChild(button);
 }
 createButton("Feriados", "btn-holiday");
+createButton('Sexta-Feira', "btn-friday");
 
 function showHolidays() {
 	let holidayButton = document.querySelector('#btn-holiday');
@@ -63,7 +64,7 @@ function showHolidays() {
 	});
 };
 showHolidays();
-createButton('Sexta-Feira', "btn-friday");
+
 
 function showFridays() {
 	let fridayButton = document.querySelector('#btn-friday');
@@ -84,5 +85,21 @@ function showFridays() {
 };
 showFridays();
 
-// function zoomIn()
-// function zoomout()
+function zoomIn() {
+	let days = document.querySelector('#days')
+	
+	days.addEventListener('mouseover', function(event) {
+		event.target.style.fontSize = '50px'
+	});
+};
+
+function zoomout() {
+	let days = document.querySelector('#days')
+	
+	days.addEventListener('mouseout', function(event) {
+		event.target.style.fontSize = '20px'
+	});
+};
+
+zoomIn()
+zoomout()
