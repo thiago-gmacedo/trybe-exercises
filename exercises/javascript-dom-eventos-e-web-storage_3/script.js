@@ -86,20 +86,28 @@ function showFridays() {
 showFridays();
 
 function zoomIn() {
-	let days = document.querySelector('#days')
+	let days = document.querySelector('#days');
 	
 	days.addEventListener('mouseover', function(event) {
-		event.target.style.fontSize = '50px'
+		event.target.style.fontSize = '50px';
 	});
 };
 
 function zoomout() {
-	let days = document.querySelector('#days')
+	let days = document.querySelector('#days');
 	
 	days.addEventListener('mouseout', function(event) {
-		event.target.style.fontSize = '20px'
+		event.target.style.fontSize = '20px';
 	});
 };
 
-zoomIn()
-zoomout()
+zoomIn();
+zoomout();
+
+function newTask(taskName) {
+	task = document.createElement('span');
+	task.innerText = taskName;
+
+	document.querySelector('.my-tasks').appendChild(task)
+};
+newTask('teste');
