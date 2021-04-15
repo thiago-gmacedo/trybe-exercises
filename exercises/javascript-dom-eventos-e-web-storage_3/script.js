@@ -105,9 +105,51 @@ zoomIn();
 zoomout();
 
 function newTask(taskName) {
-	task = document.createElement('span');
+	let task = document.createElement('span');
 	task.innerText = taskName;
 
 	document.querySelector('.my-tasks').appendChild(task)
 };
 newTask('teste');
+
+function taskColorSubtitle(color) {
+	let subtitle = document.createElement('div')
+	subtitle.className = 'task'
+	subtitle.style.backgroundColor = color
+
+	document.querySelector('.my-tasks').appendChild(subtitle)
+}
+taskColorSubtitle('blue')
+
+function selectTask() {
+	let selectedTask = document.getElementsByClassName('task selected');
+	let myTasks = document.querySelector('.task')
+
+	myTasks.addEventListener('click', function(event) {
+		if (selectedTask.length === 0) {
+			event.target.className = 'task selected';
+		} else {
+			event.target.className = 'task';
+		}
+	});
+}
+selectTask()
+
+function colorDayBackground() {
+	let selectedTask = document.getElementsByClassName('task selected');
+	let days = document.querySelector('#days');
+	let taskDiv = document.querySelector('.task');
+	let taskColor = taskDiv.style.backgroundColor;
+
+	 days.addEventListener('click', function(event) {
+	 	let eventTargetColor = event.target.style.color;
+		if (selectedTask.length > 0 && eventTargetColor !== taskColor) {
+			let color = selectedTask[0].style.backgroundColor;
+			event.target.style.color = color;
+		} else if (eventTargetColor === taskColor && selectedTask.length !== 0) {
+			event.target.style.color = 'rgb(119,119,119)';
+		};
+ 	});
+ };
+
+colorDayBackground()
